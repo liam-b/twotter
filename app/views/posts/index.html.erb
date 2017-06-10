@@ -1,0 +1,13 @@
+<div class="title">
+  <h1>
+    Twotter<%= image_tag 'logo.png', size: '50x50', alt: 'Twotter logo', class: 'logo' %>
+  </h1>
+</div>
+
+<% @posts.each do |post| %>
+  <div class="well post">
+    <p><%= post.body %></p>
+    <h5><strong><%= post.title %></strong></h5>
+    <%= link_to 'See comments', post_path(post), :class => 'btn btn-default'%>
+  </div>
+<% end %>

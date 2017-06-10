@@ -1,0 +1,8 @@
+<% @post.comments.each do |comment| %>
+  <div class="well">
+    <p><strong><%= comment.username %></strong>: <%= comment.body %></p>
+    <% if current_user.email == 'liam@anywhich.com' or current_user.email == comment.username %>
+      <%= link_to 'remove', [comment.post, comment], method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger delete-comment'%>
+    <% end %>
+  </div>
+<% end %>

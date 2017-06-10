@@ -1,0 +1,11 @@
+<%= form_for [@post, @post.comments.build] do |form| %>
+  <p class="comment-form">
+    <%= form.label :body %> <br>
+    <%= form.text_area :body, {:class => 'form-control'} %>
+    <%= form.text_field :username, {:class => 'hidden', :value => current_user.email} %>
+  </p>
+
+  <p>
+    <%= form.submit({:class => 'btn btn-primary'}) %>
+  </p>
+<% end %>

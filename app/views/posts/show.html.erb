@@ -1,0 +1,18 @@
+<div class="post">
+  <p><%= @post.body %></p>
+  <h5><strong><%= @post.title %></strong></h5>
+</div>
+<% if current_user.email == 'liam@anywhich.com' or current_user.email == @post.title %>
+  <%= link_to 'Edit', edit_post_path(@post), :class => 'btn btn-default' %>
+  <%= link_to('Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger') %>
+<% end %>
+
+<hr>
+
+<h3>Comments</h3>
+
+<%= render('comments/comments') %>
+
+<h3>New comment</h3>
+
+<%= render('comments/form') %>
