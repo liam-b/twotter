@@ -6,7 +6,7 @@
 
 <% @posts.each do |post| %>
   <div class="well post">
-    <p><%= post.body %></p>
+    <p><%= raw post.body %></p>
     <h5><strong><%= post.title %></strong></h5>
     <%= link_to 'See comments', post_path(post), :class => 'btn btn-default'%>
   </div>
