@@ -4,7 +4,7 @@
   </h1>
 </div>
 
-<% @posts.each do |post| %>
+<% @posts.reverse_each do |post| %>
   <div class="well post">
     <p><%= raw post.body %></p>
     <h5><strong><%= post.title %></strong></h5>
